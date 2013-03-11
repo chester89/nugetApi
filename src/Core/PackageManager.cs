@@ -109,7 +109,7 @@ namespace NuGet
             InstallPackage(package, targetFramework: null, ignoreDependencies: ignoreDependencies, allowPrereleaseVersions: allowPrereleaseVersions);
         }
 
-        protected void InstallPackage(IPackage package, FrameworkName targetFramework, bool ignoreDependencies, bool allowPrereleaseVersions)
+        public void InstallPackage(IPackage package, FrameworkName targetFramework, bool ignoreDependencies, bool allowPrereleaseVersions)
         {
             Execute(package, new InstallWalker(LocalRepository,
                                                SourceRepository,

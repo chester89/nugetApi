@@ -1,4 +1,6 @@
 using System;
+using System.Runtime.Versioning;
+
 namespace NuGet
 {
     public interface IPackageManager
@@ -32,6 +34,7 @@ namespace NuGet
 
         void InstallPackage(IPackage package, bool ignoreDependencies, bool allowPrereleaseVersions);
         void InstallPackage(string packageId, SemanticVersion version, bool ignoreDependencies, bool allowPrereleaseVersions);
+        void InstallPackage(IPackage package, FrameworkName targetFramework, bool ignoreDependencies, bool allowPrereleaseVersions);
         void UpdatePackage(IPackage newPackage, bool updateDependencies, bool allowPrereleaseVersions);
         void UpdatePackage(string packageId, SemanticVersion version, bool updateDependencies, bool allowPrereleaseVersions);
         void UpdatePackage(string packageId, IVersionSpec versionSpec, bool updateDependencies, bool allowPrereleaseVersions);
